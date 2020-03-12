@@ -40,7 +40,7 @@ class Cart with ChangeNotifier {
         (existingCartItem) => CartItem(
           id: existingCartItem.id,
           title: existingCartItem.title,
-          quantity: existingCartItem.quantity,
+          quantity: existingCartItem.quantity + 1,
           price: existingCartItem.price,
         ),
       );
@@ -59,6 +59,10 @@ class Cart with ChangeNotifier {
   }
   void removeItem(String productId) {
     _items.remove(productId);
+    notifyListeners();
+  }
+  void clear() {
+    _items = {};
     notifyListeners();
   }
 }
