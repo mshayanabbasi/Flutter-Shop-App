@@ -45,21 +45,32 @@ class Products with ChangeNotifier {
     // }
     return [..._items];
   }
+
   List<Product> get favoriteItems {
     return _items.where((prodItem) => prodItem.isFavorite).toList();
   }
+
   Product findById(String id) {
     return _items.firstWhere((prod) => prod.id == id);
   }
+
   // void showFavortiesOnly() {
   //   _showFavoritesOnly = true;
   //   notifyListeners();
-  // } 
+  // }
   // void showAll() {
   //   _showFavoritesOnly = false;
   //   notifyListeners();
   // }
-  void add() {
+  void addProduct(Product product) {
+    final newProduct = Product(
+      id: DateTime.now().toString(),
+      title: product.title,
+      description: product.description,
+      imageUrl: product.imageUrl,
+      price: product.price,
+    );
+    _items.add(newProduct);
     notifyListeners();
   }
 }
