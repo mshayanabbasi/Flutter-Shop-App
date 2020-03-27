@@ -246,7 +246,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
-                        Container(
+                        Container(  
                           width: 100,
                           height: 100,
                           margin: EdgeInsets.only(
