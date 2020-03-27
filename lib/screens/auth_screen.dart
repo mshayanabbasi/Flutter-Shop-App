@@ -264,7 +264,6 @@ class _AuthCardState extends State<AuthCard>
                     _authData['password'] = value;
                   },
                 ),
-                if (_authMode == AuthMode.Signup)
                   AnimatedContainer(
                     constraints: BoxConstraints(
                       minHeight: _authMode == AuthMode.Signup ? 60 : 0,
