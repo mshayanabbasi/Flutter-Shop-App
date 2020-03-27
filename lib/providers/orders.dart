@@ -42,7 +42,7 @@ class Orders with ChangeNotifier {
     }
     extractData.forEach((orderId, orderData) {
       loadedOrders.add(
-        OrderItem(
+        OrderItem(    
           id: orderId,
           amount: orderData['amount'],
           products: (orderData['products'] as List<dynamic>)
